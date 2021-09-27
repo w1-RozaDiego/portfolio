@@ -8,10 +8,20 @@
 .productCardAdd
 {
     height: 30vh;
-    border-radius: round;
+    margin: 10vh;
+    background-color: #D7E3BF !important;
+
 }
 
 .productCard
 {
     height: 30vh;
+    margin: 10vh;
+
+}
+
+.fa-plus {
+    font-size: 15rem !important;
+    color: white;
+    text-align: center;
 }
