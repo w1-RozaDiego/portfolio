@@ -1,1 +1,17 @@
 /* CSS */
+.content
+{
+    display: block;
+    margin-top: 15vh;
+}
+
+.productCardAdd
+{
+    height: 30vh;
+    border-radius: round;
+}
+
+.productCard
+{
+    height: 30vh;
+}
