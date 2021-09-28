@@ -16,7 +16,7 @@ $('.productCardAdd').on("click", function (event) {
 $setPopup = () => {
     $('.productCard').each(function () {
         $(this).on("click", function () {
-            $('.productCard #Name').html(`Hier komt de informatie \n Nadat de gebruiker heeft geklikt op de card`);
+            $(this).html(`Hier komt de informatie \n Nadat de gebruiker heeft geklikt op de card`);
         });
     });
 };
