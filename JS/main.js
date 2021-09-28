@@ -1,11 +1,26 @@
 // Set Add Card Event
-$('.productCard').on("click", function (event) {
-    let target = $(event.target);
-    let parent = target.parent();
+function setEvents(){
+    $('.productCardAdd').on("click", function (event) {
+        let target = $(event.target);
+        let parent = target.parent().parent();
+    
+        const html = `
+        <div class="productCard card col-4" style="background-color: ${$getRandomColor()};">
+            <!-- Content -->
+            <h5 class="card-title">Naam: <span id="Name"> </span> </h5>
+        </div>`;
+        var newObj = parent.append(html);
+        setPopup();
+        return newObj;
+    });
 
-    const html = `<div class="card" style="background-color:${$getRandomColor()};"><p>New text</p></div>`
-    return parent.append(html);
-});
+    function setPopup(){
+        $('.productCard').on("click",function (event){
+            alert('Event triggered');
+        });
+    };
+}
+
 
 function $getRandomColor() {
     var letters = '0123456789ABCDEF';
@@ -24,6 +39,8 @@ $(function () {
     window.$cards = {};
     // Intialise API call -- Check for content
     $API.Get();
+    // Set events on elements
+    setEvents();
 });
 class $InitialiseAPI {
     Post = () => {

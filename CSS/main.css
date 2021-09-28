@@ -23,6 +23,11 @@
 
 }
 
+.productCard:hover, .productCardAdd:hover {
+    box-shadow: 10px 10px 10px gray;
+    margin-top: 6vh;
+}
+
 .fa-plus {
     font-size: 15rem !important;
     color: white;
