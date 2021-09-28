@@ -1,13 +1,27 @@
 // Set Add Card Event
-$('.productCard').on("click", function (event) {
+$('.productCardAdd').on("click", function (event) {
     let target = $(event.target);
-    let parent = target.parent();
+    let parent = target.parent().parent();
 
-    const html = `<div class="card" style="background-color:${$getRandomColor()};"><p>New text</p></div>`
-    return parent.append(html);
+    const html = `
+                    <div class="productCard card col-4" style="background-color: ${$getRandomColor()};">
+                        <!-- Content -->
+                        <h5 class="card-title">Naam: <span id="Name"> </span> </h5>
+                    </div>`;
+    var newObj = parent.append(html);
+    $setPopup();
+    return newObj;
 });
 
-function $getRandomColor() {
+$setPopup = () => {
+    $('.productCard').each(function () {
+        $(this).on("click", function () {
+            $('.productCard #Name').html(`Hier komt de informatie \n Nadat de gebruiker heeft geklikt op de card`);
+        });
+    });
+};
+
+$getRandomColor = () => {
     var letters = '0123456789ABCDEF';
     var color = '#';
     for (var i = 0; i < 6; i++) {
