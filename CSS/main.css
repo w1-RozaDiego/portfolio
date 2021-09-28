@@ -1,17 +1,30 @@
 /* CSS */
-.content
-{
-    display: block;
+.content {
     margin-top: 15vh;
+    display: inline-block;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.productCardAdd
-{
+.productCardAdd {
     height: 30vh;
-    border-radius: round;
+    margin-top: 5vh;
+    background-color: #D7E3BF !important;
+    float: left;
+
 }
 
-.productCard
-{
+.productCard {
     height: 30vh;
+    margin-left: 2vw;
+    margin-top: 5vh;
+    float: left;
+
+}
+
+.fa-plus {
+    font-size: 15rem !important;
+    color: white;
+    text-align: center;
 }
