@@ -1,5 +1,6 @@
 /* CSS */
-.content {
+.content
+{
     margin-top: 15vh;
     display: inline-block;
     height: 100%;
@@ -7,7 +8,8 @@
     justify-content: center;
 }
 
-.productCardAdd {
+.productCardAdd
+{
     height: 30vh;
     margin-top: 5vh;
     background-color: #D7E3BF !important;
@@ -15,7 +17,8 @@
 
 }
 
-.productCard {
+.productCard
+{
     height: 30vh;
     margin-left: 2vw;
     margin-top: 5vh;
