@@ -1,4 +1,12 @@
 /* CSS */
+.container-fluid {
+    display: inline-block !important;
+}
+
+.card {
+    width: 30% !important;
+}
+
 .content
 {
     margin-top: 15vh;
@@ -12,6 +20,7 @@
 {
     height: 30vh;
     margin-top: 5vh;
+    margin-left: 2.5vw;
     background-color: #D7E3BF !important;
     float: left;
 
@@ -20,7 +29,7 @@
 .productCard
 {
     height: 30vh;
-    margin-left: 2vw;
+    margin-left: 2.5vw;
     margin-top: 5vh;
     float: left;
 
@@ -28,7 +37,6 @@
 
 .productCard:hover, .productCardAdd:hover {
     box-shadow: 10px 10px 10px gray;
-    margin-top: 6vh;
 }
 
 .fa-plus {
