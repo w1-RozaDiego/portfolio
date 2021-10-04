@@ -10,8 +10,8 @@
 
 .productCardAdd
 {
-    height: 30vh;
     margin-top: 5vh;
+    height: 30vh;
     background-color: #D7E3BF !important;
     float: left;
 
@@ -32,7 +32,15 @@
 }
 
 .fa-plus {
-    font-size: 15rem !important;
+    padding: 0%;
+    margin: 0%;
+    font-size: 13rem !important;
     color: white;
     text-align: center;
+}
+
+.exampleModalCenter
+{
+    margin-top: 5vh;
+    background-color: #D7E3BF !important;
 }
