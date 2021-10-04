@@ -30,6 +30,17 @@ $getRandomColor = () => {
     return color;
 }
 
+$dynamicallyChangeColors = () => {
+    async function setColor() {
+        $('.productCard').each(function(){
+            $(this).css({
+                'background-color': $getRandomColor
+            });
+        });
+    };
+    setInterval(setColor, 3000);
+}
+
 // Document ready
 $(function () {
     // Declare API
