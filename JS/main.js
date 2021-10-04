@@ -16,7 +16,7 @@ $('.productCardAdd').on("click", function (event) {
 $setPopup = () => {
     $('.productCard').each(function () {
         $(this).on("click", function () {
-            $('.productCard #Name').html(`Hier komt de informatie \n Nadat de gebruiker heeft geklikt op de card`);
+            $(this).html(`Hier komt de informatie \n Nadat de gebruiker heeft geklikt op de card`);
         });
     });
 };
@@ -28,6 +28,17 @@ $getRandomColor = () => {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+}
+
+$dynamicallyChangeColors = () => {
+    async function setColor() {
+        $('.productCard').each(function(){
+            $(this).css({
+                'background-color': $getRandomColor
+            });
+        });
+    };
+    setInterval(setColor, 3000);
 }
 
 // Document ready
