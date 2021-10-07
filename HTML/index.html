@@ -27,45 +27,37 @@
 </head>
 
 <body>
+    <header>
+        <div class="container-fluid" id="header">
+            <img id="image" src="../Image/logo.png">
+        </div>
+    </header>
     <noscript>
         <div class="container">
             <p style="text-align: center;"><i class="fa fa-exclamation-triangle"></i>Voor de juiste werking van deze
                 website is Javascript vereist,
                 Gelieve deze te activeren.<i class="fa fa-exclamation-triangle"></i></p>
         </div>
-    </noscript>
-
-    <div class="container content">
-        <div class="productCardAdd card col-4 ">
+    </noscript>    
+    <div class="container-fluid content">
+        <div class="productCardAdd card col-4">
             <i class="fa fa-plus" aria-hidden="true"></i>
         </div>
     </div>
     <!-- Modal, we hide this and on click we show it via javascript -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" id="plPopupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title" id="plModalTitle">Modal Title</h5>
                 </div>
                 <div class="modal-body">
-                    <label for="Name">Naam:</label><br>
-                    <input type="text" id="Name" name="Name"><br>
-                    <label for="Pomp">Pomp:</label><br>
-                    <input type="text" id="Pomp" name="Pomp">
-                    <label for="Duration">Duration:</label><br>
-                    <input type="text" id="Duration" name="Duration"><br>
-                    <label for="Repeat">Herhaling:</label><br>
-                    <input type="text" id="Repeat" name="Repeat">
-                    <label for="Description">Omschrijving:</label><br>
-                    <input type="textbox" id="Description" name="Description">
+                    Modal Text in body
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary closeModal" data-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary" id="saveModal">Opslaan</button>
                 </div>
             </div>
         </div>

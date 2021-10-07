@@ -1,4 +1,12 @@
 /* CSS */
+.container-fluid {
+    display: inline-block !important;
+}
+
+.card {
+    width: 30% !important;
+}
+
 .content
 {
     margin-top: 15vh;
@@ -11,16 +19,18 @@
 .productCardAdd
 {
     margin-top: 5vh;
-    height: 30vh;
+    margin-left: 2.5vw;
     background-color: #D7E3BF !important;
     float: left;
+    min-height: 200px !important;
+    min-width: 250px !important;
 
 }
 
 .productCard
 {
     height: 30vh;
-    margin-left: 2vw;
+    margin-left: 2.5vw;
     margin-top: 5vh;
     float: left;
 
@@ -28,13 +38,12 @@
 
 .productCard:hover, .productCardAdd:hover {
     box-shadow: 10px 10px 10px gray;
-    margin-top: 6vh;
 }
 
 .fa-plus {
     padding: 0%;
     margin: 0%;
-    font-size: 13rem !important;
+    font-size: 8vw ;
     color: white;
     text-align: center;
 }
@@ -43,4 +52,24 @@
 {
     margin-top: 5vh;
     background-color: #D7E3BF !important;
+}
+
+.modal-body{
+    padding: 2.5rem !important;
+}
+.modal-content{
+    background-color:#D7E3BF !important ;
+}
+
+#header{
+    height: 25vh;
+    background-image: url("../Image/bgonly2.png");
+    background-repeat: repeat;
+    margin-bottom: -12vh;
+}
+#image{
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
