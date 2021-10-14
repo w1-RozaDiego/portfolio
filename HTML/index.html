@@ -27,18 +27,14 @@
 </head>
 
 <body>
-    <header>
-        <div class="container-fluid" id="header">
-            <img id="image" src="../Image/logo.png">
-        </div>
-    </header>
     <noscript>
         <div class="container">
             <p style="text-align: center;"><i class="fa fa-exclamation-triangle"></i>Voor de juiste werking van deze
                 website is Javascript vereist,
                 Gelieve deze te activeren.<i class="fa fa-exclamation-triangle"></i></p>
         </div>
-    </noscript>    
+    </noscript>
+
     <div class="container-fluid content">
         <div class="productCardAdd card col col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <i class="fa fa-plus" aria-hidden="true"></i>
@@ -47,17 +43,21 @@
     <!-- Modal, we hide this and on click we show it via javascript -->
     <div class="modal fade" id="plPopupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="plModalTitle">Modal Title</h5>
+                    <button type="button" class="close btn btn-primary closeModal" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
                     Modal Text in body
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary closeModal" data-dismiss="modal">Sluiten</button>
-                    <button type="button" class="btn btn-primary" id="saveModal">Opslaan</button>
+                    <button type="button" class="btn btn-secondary closeModal" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveModal">Save changes</button>
                 </div>
             </div>
         </div>
