@@ -18,11 +18,12 @@
 
 .productCardAdd
 {
-    height: 30vh;
     margin-top: 5vh;
     margin-left: 2.5vw;
     background-color: #D7E3BF !important;
     float: left;
+    min-height: 200px !important;
+    min-width: 250px !important;
 
 }
 
@@ -40,7 +41,35 @@
 }
 
 .fa-plus {
-    font-size: 15rem !important;
+    padding: 0%;
+    margin: 0%;
+    font-size: 8vw ;
     color: white;
     text-align: center;
+}
+
+.exampleModalCenter
+{
+    margin-top: 5vh;
+    background-color: #D7E3BF !important;
+}
+
+.modal-body{
+    padding: 2.5rem !important;
+}
+.modal-content{
+    background-color:#D7E3BF !important ;
+}
+
+#header{
+    height: 25vh;
+    background-image: url("../Image/bgonly2.png");
+    background-repeat: repeat;
+    margin-bottom: -12vh;
+}
+#image{
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

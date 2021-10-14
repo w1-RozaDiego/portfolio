@@ -1,20 +1,28 @@
 // Set Add Card Event
 $('.productCardAdd').on("click", function (event) {
-    $('#plPopupModal').modal('toggle');
-    $('#plPopupModal #plModalTitle').text('Aanmaken card');
-    $('#plPopupModal .modal-body').html(`
-        <div class="container">
-            <label>Vul hieronder iets in ofzo</label>
-            <input type="text"></input>
-        </div>
-    `);
     let target = $(event.target);
     let parent = target.parent().parent();
-
-    // Super dirty way to check if there are 3 elements next to each other
-    if(parent.children().length == 4){
-
-    }
+    $('#plPopupModal').modal('toggle');
+    $('#plPopupModal').data('card', target.parent());
+    $('#plPopupModal #plModalTitle').text('Aanmaken card');
+    $('#plPopupModal .modal-body').html(`
+    <div class="row">
+    <div class="col-6">
+        <label for="Name">Naam:</label><br/>
+        <input type="text" id="plPopupName" name="Name"class="w-100"><br/>
+        <label for="Pomp">Pomp:</label><br/> 
+        <input type="text" id="plPopupPomp" name="Pomp" class="w-100"><br/>
+        <label for="Duration">Duration:</label><br/>
+        <input type="text" id="plPopupDuration" name="Duration" class="w-100"><br/>
+    </div>
+    <div class="col-6 .ms-auto">
+        <label for="Repeat">Herhaling:</label><br/>
+        <input type="text" id="plPopupRepeat" name="Repeat" class="w-100"><br/>
+        <label for="Description">Omschrijving:</label><br/>
+        <input type="textbox" id="plPopupDescription" name="Description" class="w-100">
+    </div>
+    </div>
+    `); 
 
     const html = `
                     <div class="productCard card col-4" style="background-color: ${$getRandomColor()};">
@@ -34,6 +42,15 @@ $('.closeModal').each(function(){
 // Dirty way to save the modal and close it
 $('#saveModal').each(function(){
     $(this).on("click",function(){
+        // Save data from modal and set on the card
+        var card = $('#plPopupModal').data('card');
+        val = [];
+        $('#plPopupModal .modal-body').children().each(function(){
+            if($(this).is("input[type=text]")){
+                val.push(this.value);
+            }
+        });
+        console.log(val)
         $('#plPopupModal').modal('toggle');
         // Save shit
     });
