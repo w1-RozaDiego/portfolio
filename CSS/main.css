@@ -5,7 +5,6 @@
     }
     .productCardAdd
     {
-        height: 20vh;
         margin-top: 5vh;
         background-color: #D7E3BF !important;
     
@@ -13,7 +12,6 @@
     
     .productCard
     {
-        height: 20vh;
         margin-top: 5vh;
     }
 
@@ -57,7 +55,7 @@
 
 .productCard
 {
-    height: 30vh;
+    height: max-content;
     margin-left: 2.5vw;
     margin-top: 5vh;
     float: left;
