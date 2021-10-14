@@ -1,14 +1,12 @@
+var $LoadedCards = 0;
+
 // Set Add Card Event
 $('.productCardAdd').on("click", function (event) {
     let target = $(event.target);
     let parent = target.parent().parent();
-    const html = `
-    <div class="productCard card col-4" style="background-color: ${$getRandomColor()};">
-        <!-- Content -->
-    </div>`;
+    const html = `<div class="productCard card col-4" id="card${$LoadedCards}" style="background-color: ${$getRandomColor()};"></div>`;
     parent.append(html);
-    
-    $('#plPopupModal').data('card', html);
+    window.$ActiveCard = $(html).attr('id');
     $('#plPopupModal').modal('toggle');
     $('#plPopupModal #plModalTitle').text('Aanmaken card');
     $('#plPopupModal .modal-body').html(`
@@ -23,62 +21,83 @@ $('.productCardAdd').on("click", function (event) {
         <label for="Description">Omschrijving:</label><br/>
         <input type="text" id="plPopupDescription" name="Description" class="w-100">
     `);
+
+    $setPopup();
+    $LoadedCards = $LoadedCards + 1;
 });
 
-// Dirty way to close the modal
+
+
+// Close modal
 $('.closeModal').each(function () {
     $(this).on("click", function () {
         $('#plPopupModal').modal('toggle');
     });
 });
+
 // Dirty way to save the modal and close it
 $('#saveModal').each(function () {
     $(this).on("click", function () {
         // Save data from modal and set on the card
-        var card = $('#plPopupModal').data('card');
-        val = [];
-        $('#plPopupModal .modal-body').children().each(function () {
-            if ($(this).is("input[type=text]")) {
-                val.push(this.value);
-            }
-        });
-        var name = val[0],
-            pomp = val[1],
-            duration = val[2],
-            repeat = val[3],
-            description = val[4];
-
-        card.html(`
-            <div class="container-fluid" style="text-align:center;">
-                <h3 style="text-align:center;>${name}</h3>
-            </div>
-        `);
-        card.on("click", function () {
-            $(this).html(`
-            <div class="container-fluid" style="text-align:center;">
-                <h3 style="text-align:center;>${name}</h3><br/>
-                <p>${pomp}</p><br/>
-                <p>${duration}</p><br/>
-                <p>${repeat}</p><br/>
-                <p>${description}</p><br/>
-            </div>
-            `);
-        });
-
-        $('#plPopupModal').modal('toggle');
-        // Save shit
+        // Card is the data attribute, so changing the html of this data attribute won't actually change the actual html but just the data attr.
+        // Find a way to properly get the card element isstead of the data attribute, i think
+        // add id to element and select on id, id as data attr
+        $ChangeCardText($ActiveCard);
     });
 });
 
+// Change card text
+$ChangeCardText = (id) => {
+    var card = $(`#${id}`);
+    card.addClass('editMode');
 
+    val = [];
+    $('#plPopupModal .modal-body').children().each(function () {
+        if ($(this).is("input[type=text]")) {
+            val.push(this.value);
+        }
+    });
+    var name = val[0],
+        pomp = val[1],
+        duration = val[2],
+        repeat = val[3],
+        description = val[4];
+
+    card.html(`<h3 style="text-align:center;">${name}</h3><br/><p>${pomp}</p><br/><p>${duration}</p><br/><p>${repeat}</p><br/><p>${description}</p>`);
+    
+    card.removeClass('editMode');
+
+    $('#plPopupModal').modal('toggle');
+}
+
+$UpdateModal = (id) => {
+    // Get data of selected card
+    var card = $(`#${id}`);
+    var val = [];
+
+    $(card).children().each(function () {
+        if ($(this).is("input[type=text]")) {
+            val.push(this.value);
+        }
+    });
+
+    var counter = 0;
+    $('#plPopupModal .modal-body').children().each(function () {
+        if ($(this).is("input[type=text]")) {
+            this.value = val[counter];
+            counter = counter ++;
+        }
+    });
+}
 
 // Onclick, change content of clicked card
 $setPopup = () => {
     $('.productCard').each(function () {
         $(this).on("click", function () {
+            window.$ActiveCard = $(this).attr('id');
+            $UpdateModal($(this).attr('id'));
             $('#plPopupModal').modal('toggle');
             $('#plPopupModal #plModalTitle').text('Wijzigen card');
-            $('#plPopupModal .modal-body').text('Hier komt de tekst van de configuratie \n Dit is nu tijdelijk eventjes tekst maar dit wordt zo vertaald tot HTML.');
         });
     });
 };
@@ -97,9 +116,9 @@ $getRandomColor = () => {
 $dynamicallyChangeColors = () => {
     async function setColor() {
         $('.productCard').each(function () {
-            $(this).css({
-                'background-color': $getRandomColor
-            });
+            $(this).animate({
+                backgroundColor: $getRandomColor()
+            },500);
         });
     };
     setInterval(setColor, 3000);
