@@ -69,6 +69,11 @@
     text-align: center;
 }
 }
+
+.productCard {
+    transition: background-color ease-in 5s;
+}
+
 .productCard:hover, .productCardAdd:hover {
     box-shadow: 10px 10px 10px gray;
 }

@@ -31,6 +31,9 @@ $('.productCardAdd').on("click", function (event) {
 
     $setPopup();
     $LoadedCards = $LoadedCards + 1;
+
+    // Random card colors
+    $dynamicallyChangeColors();
 });
 
 
@@ -157,10 +160,10 @@ $dynamicallyChangeColors = () => {
         $('.productCard').each(function () {
             $(this).css({
                 backgroundColor: $getRandomColor()
-            });
+            }).promise().done(function(){console.log('new colors')})
         });
     };
-    setInterval(setColor, 3000);
+    setInterval(setColor, 5000);
 }
 
 // Document ready
