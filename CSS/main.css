@@ -1,10 +1,35 @@
+/*Media query */
+@media only screen and (max-width: 767px) {
+    .card{
+        width:100%;
+    }
+    .productCardAdd
+    {
+        height: 20vh;
+        margin-top: 5vh;
+        background-color: #D7E3BF !important;
+    
+    }
+    
+    .productCard
+    {
+        height: 20vh;
+        margin-top: 5vh;
+    }
+
+    .fa-plus {
+        padding: 0%;
+        margin: 0%;
+        font-size: 20vh !important ;
+        color: white;
+        text-align: center;
+    }
+
+  }
+
 /* CSS */
 .container-fluid {
     display: inline-block !important;
-}
-
-.card {
-    width: 30% !important;
 }
 
 .content
@@ -16,15 +41,18 @@
     justify-content: center;
 }
 
+@media only screen and (min-width: 767px) {
+.card {
+    width: 30% !important;
+}
+
 .productCardAdd
 {
+    height: 30vh;
     margin-top: 5vh;
     margin-left: 2.5vw;
     background-color: #D7E3BF !important;
     float: left;
-    min-height: 200px !important;
-    min-width: 250px !important;
-
 }
 
 .productCard
@@ -33,20 +61,21 @@
     margin-left: 2.5vw;
     margin-top: 5vh;
     float: left;
-
-}
-
-.productCard:hover, .productCardAdd:hover {
-    box-shadow: 10px 10px 10px gray;
 }
 
 .fa-plus {
     padding: 0%;
     margin: 0%;
-    font-size: 8vw ;
+    font-size: 30vh !important ;
     color: white;
     text-align: center;
 }
+}
+.productCard:hover, .productCardAdd:hover {
+    box-shadow: 10px 10px 10px gray;
+}
+
+
 
 .exampleModalCenter
 {

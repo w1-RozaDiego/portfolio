@@ -25,9 +25,9 @@ $('.productCardAdd').on("click", function (event) {
     `); 
 
     const html = `
-                    <div class="productCard card col-4" style="background-color: ${$getRandomColor()};">
+                    <div class="productCard card col col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" style="background-color: ${$getRandomColor()};">
                         <!-- Content -->
-                        <h5 class="card-title">Naam: <span id="Name"> </span> </h5>
+                        <div class="card-title">Naam: <span id="Name"> </span> </div>
                     </div>`;
     var newObj = parent.append(html);
     $setPopup();
