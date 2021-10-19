@@ -160,7 +160,7 @@ $dynamicallyChangeColors = () => {
         $('.productCard').each(function () {
             $(this).css({
                 backgroundColor: $getRandomColor()
-            }).promise().done(function(){console.log('new colors')})
+            });
         });
     };
     setInterval(setColor, 5000);
